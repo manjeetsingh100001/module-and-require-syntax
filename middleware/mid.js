@@ -7,7 +7,7 @@ app.get("/books/:name", loggerhelp(),(req,res)=>{
     console.log("books");
     //return res.send(req.params) this will also work
     req.name=req.params.name;
-    return res.send({"book name":req.name})
+    return res.send({"bookName":req.name})
 })
 function loggerhelp(){
     return function (req,res,next){
