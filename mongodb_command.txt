@@ -1,0 +1,20 @@
+show dbs 
+use test 
+db.dropDatabase() 
+show collections 
+db.createCollection('users')
+db.users.insert({"firstName": "manjeet", "lastName": "singh"})
+db.users.find({}) 
+
+db.users.insertMany([{"firstName": "chotu", "lastName": "Shukla"}, {"firstName": "motu", "lastName": "Sharma"}])
+
+db.users.find({}).pretty()
+
+db.users.find({"firstName": "motu"}).pretty() 
+
+db.users.findOne({"firstName": "chotu"}) 
+db.users.update({"_id": "Object Id here"}, {$set: {"lastName": "Shah"}}) 
+db.users.update({"firstName": "motu"}, {$set: {"lastName": "Shah"}})  
+db.users.updateMany({"firstName": "chotu"}, {$set: {"religion": "Hindu"}})
+
+db.users.remove({"firstName": "Prateek"}) # removes all documents with firstName => Prateek
