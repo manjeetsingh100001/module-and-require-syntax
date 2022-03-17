@@ -1,0 +1,12 @@
+db.allmovies.find({}).pretty()
+ db.allmovies.find({"movie_name":{$ne:"Rita"}}).pretty()
+db.allmovies.find({"budget":{$gte:19954}}).pretty()
+db.allmovies.find({"budget":{$gt:19954}}).pretty()
+db.allmovies.find({"budget":{$lt:10378}}).pretty()
+ db.allmovies.find({"budget":{$lte:10378}}).pretty()
+db.allmovies.find({$and:[{"productionyear":{$gt:2018}},{"budget":{$gt:19000}}]}).pretty()
+db.allmovies.find({$or:[{"productionyear":{$gt:2018}},{"budget":{$gt:19000}}]}).pretty()
+ db.allmovies.find({$nor:[{"productionyear":2009},{"budget":15873}]}).pretty()
+db.allmovies.find({$or:[{"productionyear":{$ne:2018}},{"budget":{$ne:19000}}]}).pretty()
+db.allmovies.find({$or:[{"productionyear":{$nte:2018}},{"budget":{$nte:19000}}]}).pretty()
+db.allmovies.find({}).sort({"productionyear":1})////***dont know how to apply if condition if year same then sort on the basis of movie name
